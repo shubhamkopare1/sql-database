@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>users data</title>
+    <style>
+        th,tr,table,td{
+            border: 1px solid white;
+        }
+        body{
+            display: flex;
+    justify-content: center;
+    background: black;
+    color: white;
+   
+        }
+        button{
+            background: #212121;
+            border: 1px solid #212121;
+    color: white;
+        }
+        .btn{
+            position: fixed;
+    bottom: .1rem;
+    height: 4rem;
+    width: 54rem;
+   
+}
+       
+        .btn-box{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        
+        }
+    </style>
+</head>
+
+<body><div>
+    <table>
+        <tr>
+            <th>id</th>
+            <th>name</th>
+            <th>email</th>
+        </tr>
+      <% for(user of results){ %>
+          <tr>  
+            <td><%= user.id%></td>
+            <td><%= user.username %></td>
+            <td><%= user.email %></td>
+            <form method="get" action="/users/<%= user.id %>/edit">
+                 <td><button>edit</button></td>
+            </form>
+            <form method="get" action="/users/<%= user.id %>/delete">
+                 <td><button>delete</button></td>
+            </form>
+          </tr>
+      <% } %>
+    </table>
+    <br>
+    <form method="get" action="/users/post"><div class="btn-box">
+        <button class="btn">add</button></div>
+   </form>
+</div>
+</body>
+</html>

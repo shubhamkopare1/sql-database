@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>edit</title>
+    <style>
+        body{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 95vh;
+            background-color: black;
+        }
+        form{
+            display: flex;
+    flex-direction: column;
+    height: 21rem;
+    width: 21rem;
+    background: #212121;;
+    padding: 3rem;
+        }
+      
+        .box{
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+        h1{
+            margin: 0;
+            text-align: center;
+            color: white;
+        }
+        button{
+            height: 2.4rem;
+        }
+    </style>
+</head>
+<body>
+    <div>
+    <form method="POST" action="/users/<%= data.id %>?_method=PATCH">  <div class="box">
+        <h1>Edit The Name</h1>
+      
+        <textarea name="username" id="" cols="30" rows="10"><%=data.username %></textarea>
+        <input type="password" name="password" placeholder="enter the password">
+        <button>submit</button></div>
+    </form></div>
+</body>
+</html>

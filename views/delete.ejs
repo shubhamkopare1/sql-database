@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>delete page</title>
+    <style>
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 95vh;
+    background-color: black;
+}
+.box{
+    height: 25rem;
+    width: 25rem;
+    background: #212121;;
+
+}
+form{
+    flex-direction: column;
+    display: flex;
+    justify-content: column;
+    align-items: center;
+    height: 21rem;
+    justify-content: center;
+    gap: 1.8rem;
+}
+h1{
+   
+    margin: 1rem 0 1rem 0;
+    color: white;
+}
+input{
+    width: 80%;
+    height: 2rem;
+    border-radius: 2px;
+}
+button{
+    height: 2rem;
+    width: 80%;
+    border-radius: 2px;
+
+}
+    </style>
+</head>
+<body>
+    <div class="box">
+    <form method="post" action="/users/<%= data.id %>?_method=DELETE">
+        <h1>Delete Form</h1>
+        <input type="email" name="email" placeholder="enter your email">
+        <input type="password" name="password" placeholder="enter your password">
+        <button>delete</button>
+    </form></div>
+</body>
+</html>
